@@ -1,43 +1,30 @@
-package com.fprojects.RESTquestionnaire.entities;
+package com.fprojects.RESTquestionnaire.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.UUID;
 
 /**
- * Сущность опроса
+ * Запрос на создание опроса
  */
-@Entity
-@Table(name = "interviews")
 @Data
-public class InterviewEntity {
+public class InterviewRequest {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private UUID id;
-
-    @Column(name = "interview_name")
     @Size(min = 2, message = "Название опроса 'interviewName' должно быть не меньше 2х символов")
     private String interviewName;
 
-    @Column(name = "start_date")
     @NotNull(message = "Должна быть указана дата начала опроса")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate startDate;
 
-    @Column(name = "end_date")
     @NotNull(message = "Должна быть указана дата окончания опроса")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate endDate;
 
-    @Column(name = "active")
-    @NotNull
     private boolean active;
 
-    @OneToMany(mappedBy = "interviewEntity")
-    private List<QuestionEntity> questionEntityList;
 }

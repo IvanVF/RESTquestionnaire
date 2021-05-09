@@ -8,6 +8,9 @@ import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 import java.util.UUID;
 
+/**
+ * Сущность вопроса
+ */
 @Entity
 @Table(name = "questions")
 @Data

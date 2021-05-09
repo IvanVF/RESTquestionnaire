@@ -9,10 +9,10 @@
             <column name="id" type="uuid">
                 <constraints primaryKey="true" nullable="false" unique="true" />
             </column>
-            <column name="interview_name" type="varchar(255)" />
-            <column name="start_date" type="timestamp" />
-            <column name="end_date" type="timestamp" />
-            <column name="active" type="boolean" />
+            <column name="interview_name" type="varchar(255)"> <constraints nullable="false" /> </column>
+            <column name="start_date" type="date"> <constraints nullable="false" /> </column>
+            <column name="end_date" type="date"> <constraints nullable="false" /> </column>
+            <column name="active" type="boolean"> <constraints nullable="false" /> </column>
         </createTable>
     </changeSet>
 
