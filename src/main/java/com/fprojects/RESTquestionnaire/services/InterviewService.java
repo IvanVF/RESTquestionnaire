@@ -87,7 +87,8 @@ public class InterviewService {
         if (editRequest.getInterviewName() != null) { interviewEntity.setInterviewName(editRequest.getInterviewName()); }
         if (editRequest.getStartDate() != null) { interviewEntity.setStartDate(editRequest.getStartDate()); }
         if (editRequest.getEndDate() != null) { interviewEntity.setEndDate(editRequest.getEndDate()); }
-        if (editRequest.getActive().equals("true") || editRequest.getActive().equals("false")) { interviewEntity.setActive(Boolean.parseBoolean(editRequest.getActive())); }
+        if (editRequest.getActive() != null && (editRequest.getActive().equals("true") || editRequest.getActive().equals("false"))) {
+            interviewEntity.setActive(Boolean.parseBoolean(editRequest.getActive())); }
 
         interviewRepository.save(interviewEntity);
     }

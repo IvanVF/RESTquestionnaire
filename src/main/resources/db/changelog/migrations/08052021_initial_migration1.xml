@@ -32,6 +32,7 @@
         <addForeignKeyConstraint baseTableName="questions" baseColumnNames="interview_id" constraintName="question_interview_fk" referencedTableName="interviews"
                                  referencedColumnNames="id" onDelete="CASCADE" />
 
+        <!-- Заполнение таблиц interviews и questions пробными данными-->
         <sql>
             INSERT INTO interviews VALUES
             ('859259b2-34d1-4bbe-850b-93d6bad87731', 'A Interview 1', '13-05-2021', '19-05-2022', true),

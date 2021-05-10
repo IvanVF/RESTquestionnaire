@@ -1,7 +1,6 @@
 package com.fprojects.RESTquestionnaire.controllers;
 
 import com.fprojects.RESTquestionnaire.dto.request.QuestionEditRequest;
-import com.fprojects.RESTquestionnaire.dto.request.QuestionRequest;
 import com.fprojects.RESTquestionnaire.dto.request.QuestionRequestList;
 import com.fprojects.RESTquestionnaire.entities.QuestionEntity;
 import com.fprojects.RESTquestionnaire.exceptions.ResourceNotFoundException;
