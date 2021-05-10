@@ -1,6 +1,10 @@
 package com.fprojects.RESTquestionnaire.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import org.aspectj.lang.annotation.After;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -39,5 +43,6 @@ public class InterviewEntity {
     private boolean active;
 
     @OneToMany(mappedBy = "interviewEntity")
+    @JsonManagedReference
     private List<QuestionEntity> questionEntityList;
 }

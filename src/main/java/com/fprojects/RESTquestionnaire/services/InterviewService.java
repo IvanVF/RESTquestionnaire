@@ -2,7 +2,6 @@ package com.fprojects.RESTquestionnaire.services;
 
 import com.fprojects.RESTquestionnaire.dto.request.InterviewEditRequest;
 import com.fprojects.RESTquestionnaire.dto.request.InterviewRequest;
-import com.fprojects.RESTquestionnaire.dto.response.InterviewResponse;
 import com.fprojects.RESTquestionnaire.entities.InterviewEntity;
 import com.fprojects.RESTquestionnaire.enums.SortingType;
 import com.fprojects.RESTquestionnaire.exceptions.ResourceNotFoundException;

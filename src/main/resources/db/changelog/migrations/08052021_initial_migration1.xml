@@ -23,23 +23,27 @@
                 <constraints primaryKey="true" nullable="false" unique="true" />
             </column>
             <column name="question" type="varchar(255)" />
-            <column name="order" type="int" />
+            <column name="q_order" type="int"> <constraints nullable="false" /> </column>
             <column name="interview_id" type="UUID" >
                 <constraints nullable="false" />
             </column>
         </createTable>
 
         <addForeignKeyConstraint baseTableName="questions" baseColumnNames="interview_id" constraintName="question_interview_fk" referencedTableName="interviews"
-                                 referencedColumnNames="id" />
+                                 referencedColumnNames="id" onDelete="CASCADE" />
+
+        <sql>
+            INSERT INTO interviews VALUES
+            ('859259b2-34d1-4bbe-850b-93d6bad87731', 'A Interview 1', '13-05-2021', '19-05-2022', true),
+            ('6ed19dcf-a0e2-4980-9102-9d1abfdd6840', 'B Interview 2', '13-05-2021', '20-05-2022', true),
+            ('22dbad43-308d-4322-ab5b-b31d9b073b54', 'C Interview 3', '15-05-2021', '20-05-2021', true);
+
+            INSERT INTO questions VALUES
+            ('a3930cdd-8ca1-44e7-bf60-2faefd55c1c5', 'To be or not to be?', 1, '859259b2-34d1-4bbe-850b-93d6bad87731'),
+            ('33e1d0ec-ddf2-4baa-9f10-e5e9c6a63c41', '2b || ! 2b', 2, '859259b2-34d1-4bbe-850b-93d6bad87731'),
+            ('4dc77fb3-44e2-47fa-948f-9310d9d8f6bd', 'Стакан на половину полон?', 1, '6ed19dcf-a0e2-4980-9102-9d1abfdd6840')
+        </sql>
 
     </changeSet>
-
-    <!-- Заполнение первой строки пробными значениями -->
-    <!--<changeSet author="FeinIV" id="23042021_initial_migration_2">
-        <sql>
-            INSERT INTO post (id, anons, full_text, title, views)
-            VALUES ('66ba7718-6cd0-42a2-b2b1-9c6a58340c24', 'Пробный текст анонса', 'Описание анонса', 'Заголовок анонса', 15)
-        </sql>
-    </changeSet>-->
 
 </databaseChangeLog>

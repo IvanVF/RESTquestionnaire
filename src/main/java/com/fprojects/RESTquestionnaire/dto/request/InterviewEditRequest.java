@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
+/**
+ * Запрос на обновление опроса
+ */
 @Data
 public class InterviewEditRequest {
 
